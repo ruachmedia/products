@@ -35,7 +35,6 @@
     button { font: inherit; cursor: pointer; }
     img { display: block; }
 
-    /* ── TOPBAR ── */
     .topbar {
       position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
       width: calc(100% - 28px); max-width: var(--max-width);
@@ -53,7 +52,6 @@
     .topbar-logo { height: 46px; width: auto; border-radius: 8px; object-fit: cover; }
     .topbar-right { display: flex; align-items: center; gap: 8px; }
 
-    /* Cart */
     .cart-btn {
       position: relative; width: 42px; height: 42px;
       display: flex; align-items: center; justify-content: center;
@@ -72,7 +70,6 @@
     }
     .cart-count.visible { display: flex; }
 
-    /* Hamburger */
     .hamburger-btn {
       width: 42px; height: 42px;
       display: flex; align-items: center; justify-content: center;
@@ -81,7 +78,6 @@
     }
     .hamburger-btn:hover { background: rgba(255,255,255,0.08); }
 
-    /* ── MENU ── */
     .menu-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.6);
       z-index: 9100; display: none; backdrop-filter: blur(3px);
@@ -134,10 +130,8 @@
     .menu-divider { height: 1px; background: var(--glass-border); margin: 12px 0; }
     .menu-user-section { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--glass-border); }
 
-    /* ── PAGE ── */
     .page { max-width: var(--max-width); margin: 0 auto; padding: 90px 12px 40px; }
 
-    /* ── HERO ── */
     .store-hero {
       background: linear-gradient(135deg, #0f1e3d 0%, #1a3a6b 50%, #0b6fe6 100%);
       border-radius: 16px; padding: 36px 28px; margin-bottom: 28px;
@@ -147,14 +141,12 @@
     .store-hero h1 { font-size: clamp(22px,5vw,38px); font-weight: 900; margin-bottom: 10px; }
     .store-hero p { color: rgba(255,255,255,0.75); font-size: 15px; max-width: 560px; margin: 0 auto; line-height: 1.5; }
 
-    /* ── SECTION TITLE ── */
     .section-title {
       font-size: 20px; font-weight: 800; margin-bottom: 20px;
       display: flex; align-items: center; gap: 10px;
     }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--glass-border); }
 
-    /* ── FILTER BAR ── */
     .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
     .filter-chip {
       padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 700;
@@ -163,14 +155,12 @@
     }
     .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: white; }
 
-    /* ── PRODUCTS GRID ── */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 16px; margin-bottom: 48px;
     }
 
-    /* ── PRODUCT CARD ── */
     .product-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
       border: 1px solid var(--glass-border); border-radius: 14px;
@@ -239,7 +229,6 @@
     .add-cart-btn:hover { opacity: .9; transform: scale(1.03); }
     .add-cart-btn.added { background: linear-gradient(180deg, var(--green), #059669); }
 
-    /* ── CART SIDEBAR ── */
     .cart-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.55);
       z-index: 9200; display: none; backdrop-filter: blur(3px);
@@ -299,7 +288,6 @@
     .checkout-btn:hover { opacity: .9; transform: translateY(-1px); }
     .checkout-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
 
-    /* ── MODALS ── */
     .modal-backdrop {
       position: fixed; inset: 0; background: rgba(0,0,0,0.65);
       z-index: 9300; display: none; backdrop-filter: blur(4px);
@@ -328,7 +316,6 @@
     .modal-title { font-size: 20px; font-weight: 900; margin-bottom: 6px; padding-right: 32px; }
     .modal-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
 
-    /* ── AUTH TABS ── */
     .auth-tabs {
       display: flex; gap: 4px; background: rgba(255,255,255,0.03);
       border-radius: 10px; padding: 4px; margin-bottom: 22px;
@@ -339,7 +326,6 @@
     }
     .auth-tab.active { background: var(--accent); color: white; }
 
-    /* ── FIELDS ── */
     .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .field label { font-size: 12px; font-weight: 700; color: var(--text); }
     .field input, .field textarea, .field select {
@@ -377,7 +363,6 @@
     .form-msg.success { color: var(--green); }
     .form-msg.info    { color: var(--muted); }
 
-    /* ── USER CHIP ── */
     .user-chip {
       display: flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border);
@@ -407,25 +392,37 @@
     .acct-menu-item:hover { background: rgba(255,255,255,0.05); }
     .acct-menu-item.danger { color: var(--red); }
 
-    /* ── PAYMENT LOADING ── */
+    /* ── PAYMENT LOADING — shows while processing order + email ── */
     .payment-loading-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.88);
+      position: fixed; inset: 0; background: rgba(0,0,0,0.92);
       z-index: 99999; display: none;
       flex-direction: column; align-items: center; justify-content: center;
-      gap: 20px; backdrop-filter: blur(8px);
+      gap: 20px; backdrop-filter: blur(10px);
     }
     .payment-loading-overlay.visible { display: flex; }
     .payment-spinner {
-      width: 58px; height: 58px;
-      border: 4px solid rgba(255,255,255,0.12);
+      width: 62px; height: 62px;
+      border: 4px solid rgba(255,255,255,0.1);
       border-top-color: var(--accent);
       border-radius: 50%; animation: spin .8s linear infinite;
     }
-    .payment-loading-text  { font-size: 17px; font-weight: 800; color: var(--text); }
-    .payment-loading-sub   { font-size: 13px; color: var(--muted); text-align: center; max-width: 260px; line-height: 1.5; }
+    .payment-loading-text { font-size: 18px; font-weight: 800; color: var(--text); }
+    .payment-loading-sub  { font-size: 13px; color: var(--muted); text-align: center; max-width: 260px; line-height: 1.6; }
+    .payment-loading-steps {
+      display: flex; flex-direction: column; gap: 8px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border);
+      border-radius: 12px; padding: 14px 20px; min-width: 240px;
+    }
+    .loading-step {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--muted); font-weight: 600;
+      transition: color .3s;
+    }
+    .loading-step.active  { color: var(--accent); }
+    .loading-step.done    { color: var(--green);  }
+    .step-icon { font-size: 16px; width: 20px; text-align: center; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── ORDER SUCCESS ── */
     .order-success-icon { font-size: 56px; text-align: center; margin-bottom: 12px; }
     .order-success-code {
       background: linear-gradient(135deg,#1e3a8a,#3b82f6);
@@ -442,7 +439,6 @@
     .order-detail-row .label { color: var(--muted); }
     .order-detail-row .value { font-weight: 700; }
 
-    /* ── PRODUCT DETAIL ── */
     .product-detail-img {
       width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden;
       background: linear-gradient(135deg,#1a2744,#0b6fe6);
@@ -457,7 +453,6 @@
     .feature-list li { font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
     .feature-list li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
 
-    /* ── CHECKOUT MODAL ── */
     .checkout-modal { max-width: 520px; }
     .checkout-items-summary {
       background: rgba(255,255,255,0.02); border-radius: 10px; padding: 12px;
@@ -471,7 +466,6 @@
       margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--glass-border);
     }
 
-    /* ── TOAST ── */
     .toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
     .toast {
       background: #1a1f2e; border: 1px solid var(--glass-border);
@@ -486,7 +480,6 @@
     .toast.error   { border-color: var(--red);   }
     .toast.info    { border-color: var(--accent); }
 
-    /* ── MY ORDERS ── */
     .order-card {
       background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border);
       border-radius: 10px; padding: 14px; margin-bottom: 12px;
@@ -496,7 +489,6 @@
     .order-date { font-size: 11px; color: var(--muted); }
     .order-items-list { font-size: 12px; color: var(--muted); }
 
-    /* ── SPINNER (inline) ── */
     .spinner {
       width: 16px; height: 16px;
       border: 2px solid rgba(255,255,255,0.2);
@@ -505,7 +497,6 @@
       display: inline-block; vertical-align: middle; margin-right: 6px;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .products-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
       .product-name  { font-size: 12px; }
@@ -531,14 +522,20 @@
 </head>
 <body>
 
-  <!-- ── PAYMENT LOADING OVERLAY ── -->
+  <!-- PAYMENT LOADING OVERLAY — visible while saving order + sending email -->
   <div class="payment-loading-overlay" id="paymentLoadingOverlay">
     <div class="payment-spinner"></div>
-    <div class="payment-loading-text">Processing Payment…</div>
-    <div class="payment-loading-sub">Please do not press back.<br>Your order is being confirmed.</div>
+    <div class="payment-loading-text" id="loadingTitle">Confirming Payment…</div>
+    <div class="payment-loading-steps">
+      <div class="loading-step active" id="step1"><span class="step-icon">💳</span> Confirming payment</div>
+      <div class="loading-step"        id="step2"><span class="step-icon">💾</span> Saving your order</div>
+      <div class="loading-step"        id="step3"><span class="step-icon">📧</span> Sending files to email</div>
+      <div class="loading-step"        id="step4"><span class="step-icon">✅</span> All done!</div>
+    </div>
+    <div class="payment-loading-sub">Please do not close this page.<br>Your files are being prepared.</div>
   </div>
 
-  <!-- ── TOPBAR ── -->
+  <!-- TOPBAR -->
   <header class="topbar" id="topbar">
     <img class="topbar-logo" src="https://raw.githubusercontent.com/ruachmedia/registration/refs/heads/main/logo.png.jfif" alt="Ruach Media">
     <div class="topbar-right">
@@ -569,7 +566,7 @@
     </div>
   </header>
 
-  <!-- ── MENU ── -->
+  <!-- MENU -->
   <div class="menu-overlay" id="menuOverlay"></div>
   <div class="menu-panel" id="menuPanel">
     <div class="menu-header">
@@ -578,28 +575,16 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
-
     <div class="menu-section-label">Store</div>
     <a href="https://ruachmedia.github.io/store/" class="menu-item primary">
       <span class="menu-item-icon">🛍️</span> Ruach Media Store
     </a>
-
     <div class="menu-divider"></div>
-
     <div class="menu-section-label">Workshop Registration</div>
-    <a href="https://ruachmedia.github.io/registration/#home" class="menu-item">
-      <span class="menu-item-icon">🏠</span> Home
-    </a>
-    <a href="https://ruachmedia.github.io/registration/#registration" class="menu-item">
-      <span class="menu-item-icon">📝</span> Registration Form
-    </a>
-    <a href="https://ruachmedia.github.io/registration/#workshop-details" class="menu-item">
-      <span class="menu-item-icon">📅</span> Workshop Details
-    </a>
-    <a href="https://ruachmedia.github.io/registration/#contact" class="menu-item">
-      <span class="menu-item-icon">📞</span> Contact Us
-    </a>
-
+    <a href="https://ruachmedia.github.io/registration/#home" class="menu-item"><span class="menu-item-icon">🏠</span> Home</a>
+    <a href="https://ruachmedia.github.io/registration/#registration" class="menu-item"><span class="menu-item-icon">📝</span> Registration Form</a>
+    <a href="https://ruachmedia.github.io/registration/#workshop-details" class="menu-item"><span class="menu-item-icon">📅</span> Workshop Details</a>
+    <a href="https://ruachmedia.github.io/registration/#contact" class="menu-item"><span class="menu-item-icon">📞</span> Contact Us</a>
     <div class="menu-user-section">
       <div class="menu-divider" style="margin-top:0"></div>
       <div id="menuAuthBtns">
@@ -615,7 +600,7 @@
     </div>
   </div>
 
-  <!-- ── MAIN PAGE ── -->
+  <!-- MAIN PAGE -->
   <div class="page">
     <div class="store-hero">
       <h1>🎚️ Ruach Media Store</h1>
@@ -632,7 +617,7 @@
     <div class="products-grid" id="productsGrid"></div>
   </div>
 
-  <!-- ── CART SIDEBAR ── -->
+  <!-- CART SIDEBAR -->
   <div class="cart-overlay" id="cartOverlay"></div>
   <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
     <div class="cart-header">
@@ -651,7 +636,7 @@
     </div>
   </aside>
 
-  <!-- ── AUTH MODAL ── -->
+  <!-- AUTH MODAL -->
   <div class="modal-backdrop" id="authModal">
     <div class="modal-box">
       <button class="modal-close" id="authModalClose">
@@ -661,54 +646,33 @@
         <button class="auth-tab active" id="tabLogin">Sign In</button>
         <button class="auth-tab" id="tabSignup">Sign Up</button>
       </div>
-
-      <!-- LOGIN -->
       <div id="loginForm">
         <div class="modal-title">Welcome back 👋</div>
         <div class="modal-subtitle">Sign in to your Ruach Media account</div>
-        <div class="field"><label>Email Address *</label>
-          <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email">
-        </div>
-        <div class="field"><label>Password *</label>
-          <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
-        </div>
+        <div class="field"><label>Email Address *</label><input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email"></div>
+        <div class="field"><label>Password *</label><input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password"></div>
         <div class="forgot-link"><a href="#" id="forgotPasswordLink">Forgot password?</a></div>
         <button class="form-btn" id="loginSubmitBtn">Sign In</button>
         <div class="form-msg" id="loginMsg"></div>
         <div class="form-divider">or</div>
         <p style="text-align:center;font-size:13px;color:var(--muted)">Don't have an account? <a href="#" id="switchToSignup" style="color:var(--accent);font-weight:700">Sign Up</a></p>
       </div>
-
-      <!-- SIGNUP -->
       <div id="signupForm" style="display:none">
         <div class="modal-title">Create Account 🚀</div>
         <div class="modal-subtitle">Join Ruach Media and access all resources</div>
-        <div class="field"><label>Full Name *</label>
-          <input type="text" id="signupName" placeholder="Jane Doe" autocomplete="name">
-        </div>
-        <div class="field"><label>Email Address *</label>
-          <input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email">
-        </div>
-        <div class="field"><label>Phone Number *</label>
-          <input type="tel" id="signupPhone" placeholder="+91 98765 43210">
-        </div>
-        <div class="field"><label>Password *</label>
-          <input type="password" id="signupPassword" placeholder="Min. 6 characters" autocomplete="new-password">
-          <span class="hint">Must be at least 6 characters</span>
-        </div>
+        <div class="field"><label>Full Name *</label><input type="text" id="signupName" placeholder="Jane Doe" autocomplete="name"></div>
+        <div class="field"><label>Email Address *</label><input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email"></div>
+        <div class="field"><label>Phone Number *</label><input type="tel" id="signupPhone" placeholder="+91 98765 43210"></div>
+        <div class="field"><label>Password *</label><input type="password" id="signupPassword" placeholder="Min. 6 characters" autocomplete="new-password"><span class="hint">Must be at least 6 characters</span></div>
         <button class="form-btn" id="signupSubmitBtn">Create Account</button>
         <div class="form-msg" id="signupMsg"></div>
         <div class="form-divider">or</div>
         <p style="text-align:center;font-size:13px;color:var(--muted)">Already have an account? <a href="#" id="switchToLogin" style="color:var(--accent);font-weight:700">Sign In</a></p>
       </div>
-
-      <!-- FORGOT PASSWORD -->
       <div id="forgotForm" style="display:none">
         <div class="modal-title">Reset Password 🔐</div>
         <div class="modal-subtitle">Enter your email and we'll send a reset link</div>
-        <div class="field"><label>Email Address *</label>
-          <input type="email" id="forgotEmail" placeholder="you@example.com" autocomplete="email">
-        </div>
+        <div class="field"><label>Email Address *</label><input type="email" id="forgotEmail" placeholder="you@example.com" autocomplete="email"></div>
         <button class="form-btn" id="forgotSubmitBtn">Send Reset Link</button>
         <div class="form-msg" id="forgotMsg"></div>
         <div class="form-divider">or</div>
@@ -717,7 +681,7 @@
     </div>
   </div>
 
-  <!-- ── PRODUCT DETAIL MODAL ── -->
+  <!-- PRODUCT DETAIL MODAL -->
   <div class="modal-backdrop" id="productModal">
     <div class="modal-box" style="max-width:500px">
       <button class="modal-close" id="productModalClose">
@@ -727,7 +691,7 @@
     </div>
   </div>
 
-  <!-- ── CHECKOUT MODAL ── -->
+  <!-- CHECKOUT MODAL -->
   <div class="modal-backdrop" id="checkoutModal">
     <div class="modal-box checkout-modal">
       <button class="modal-close" id="checkoutModalClose">
@@ -753,11 +717,11 @@
     </div>
   </div>
 
-  <!-- ── ORDER SUCCESS MODAL ── -->
+  <!-- ORDER SUCCESS MODAL -->
   <div class="modal-backdrop" id="orderSuccessModal">
     <div class="modal-box" style="text-align:center">
       <div class="order-success-icon">🎉</div>
-      <div class="modal-title" style="text-align:center">Payment Successful!</div>
+      <div class="modal-title" style="text-align:center">Order Complete!</div>
       <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Your files have been sent to your email. Check your inbox!</p>
       <div class="order-success-code">
         <div class="code-label">ORDER ID</div>
@@ -768,7 +732,7 @@
     </div>
   </div>
 
-  <!-- ── MY ORDERS MODAL ── -->
+  <!-- MY ORDERS MODAL -->
   <div class="modal-backdrop" id="myOrdersModal">
     <div class="modal-box" style="max-width:500px">
       <button class="modal-close" id="myOrdersModalClose">
@@ -780,10 +744,9 @@
     </div>
   </div>
 
-  <!-- ── TOAST ── -->
+  <!-- TOAST -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -805,72 +768,77 @@
   const db   = firebase.database();
   const auth = firebase.auth();
 
-  /* ── EMAILJS
-     Template must have these variables:
-       {{to_name}}       — buyer full name
-       {{to_email}}      — buyer email  (set as "To Email" in EmailJS template)
-       {{order_id}}      — order ID e.g. RUACH-ORD-10001
-       {{items_list}}    — bullet list of purchased items
-       {{total}}         — total amount  e.g. ₹10 or FREE
-       {{file_links}}    — download URLs (from Firebase downloadUrl field, per product)
-       {{temp_password}} — temporary password if new guest account was created
-       {{is_new_account}}— Yes / No
-  ── */
-emailjs.init("D5gC9_JYnaPMcI_T2");
-    const EMAILJS_SERVICE_ID  = "service_5b4gh7j";
-const EMAILJS_TEMPLATE_ID = "template_xu318xm";
+  /* ── EMAILJS ── */
+  emailjs.init("D5gC9_JYnaPMcI_T2");
+  const EMAILJS_SERVICE_ID  = "service_5b4gh7j";
+  const EMAILJS_TEMPLATE_ID = "template_xu318xm";
+
   /* ── RAZORPAY ── */
   const RAZORPAY_KEY = 'rzp_live_SFPgatX34SQ1qU';
 
-  /* ── PRODUCTS
-     prod_001 & prod_002 → FREE for testing (price:0)
-     downloadUrl is set via your admin page in Firebase.
-     It is NEVER shown on the store page — only emailed after purchase.
-  ── */
+  /* ── STATIC PRODUCTS ── */
   const STATIC_PRODUCTS = [
     {
       id: "prod_001", name: "Soundcraft Ui24R Starter Pack",
       category: "Audio", badge: "free", badgeText: "FREE", emoji: "🎚️", price: 0,
       shortDesc: "Ready-to-use scenes, channel presets and EQ snapshots for the Soundcraft Ui24R.",
-      description: "Jump-start your Soundcraft Ui24R setup with professionally designed presets. Includes 12 channel snapshots, 6 full-scene snapshots, a comprehensive setup guide PDF, and a quick-reference cheat sheet.",
-      features: ["12 channel snapshots (vocals, drums, bass, keys, etc.)", "6 full-scene snapshots for different service types", "Step-by-step PDF setup guide (18 pages)", "Quick-reference cheat sheet", "Compatible with Ui24R firmware v3.3+", "Lifetime access to file downloads"],
+      description: "Jump-start your Soundcraft Ui24R setup with professionally designed presets.",
+      features: ["12 channel snapshots","6 full-scene snapshots","Step-by-step PDF guide","Quick-reference cheat sheet","Compatible with Ui24R firmware v3.3+","Lifetime access"],
       fileType: "ZIP (scenes + PDF)", fileSize: "4.2 MB", tags: ["Soundcraft","Presets","Live Sound"]
     },
     {
       id: "prod_002", name: "Church Livestream Setup Guide",
       category: "Training", badge: "free", badgeText: "FREE", emoji: "📡", price: 0,
       shortDesc: "A complete PDF guide to launching a professional church livestream from scratch.",
-      description: "Everything you need to go live confidently. This 32-page guide covers equipment selection, OBS Studio configuration, streaming platform setup (YouTube & Facebook), and optimization tips.",
-      features: ["32-page illustrated PDF guide", "OBS Studio configuration walkthrough", "YouTube Live & Facebook Live setup", "Recommended equipment list with budget tiers", "Troubleshooting checklist", "Bonus: Social media promotion templates"],
+      description: "Everything you need to go live confidently. 32-page illustrated guide.",
+      features: ["32-page illustrated PDF","OBS Studio walkthrough","YouTube Live & Facebook setup","Equipment list","Troubleshooting checklist","Social media templates"],
       fileType: "PDF", fileSize: "8.7 MB", tags: ["Livestream","OBS","YouTube","Guide"]
     },
     {
       id: "prod_003", name: "Waves Plugin Church Bundle",
       category: "Audio", badge: "new", badgeText: "NEW", emoji: "🎛️", price: 5,
       shortDesc: "Pre-configured Waves plugin presets for crystal-clear church vocals and instruments.",
-      description: "Professionally tuned Waves plugin presets for church audio. Includes presets for vocals, acoustic guitar, piano, and room correction — optimised for typical church room acoustics.",
-      features: ["Vocal chain preset (CLA-76, H-EQ, R-Vox)", "Acoustic guitar preset (H-EQ, MV2)", "Piano/keys preset (L1 + RBass)", "Room correction guide for small-medium venues", "Compatible with Waves 12, 13, 14", "PDF installation guide included"],
-      fileType: "XPS Preset Files + PDF", fileSize: "2.1 MB", tags: ["Waves","Plugins","Presets","Vocals"]
+      description: "Professionally tuned Waves plugin presets for church audio.",
+      features: ["Vocal chain preset","Acoustic guitar preset","Piano/keys preset","Room correction guide","Compatible with Waves 12-14","PDF guide"],
+      fileType: "XPS Preset Files + PDF", fileSize: "2.1 MB", tags: ["Waves","Plugins","Presets"]
     },
     {
       id: "prod_004", name: "Church Graphic Design Starter Kit",
       category: "Visual", badge: null, badgeText: "", emoji: "🎨", price: 5,
       shortDesc: "Canva & Photoshop templates for sermon slides, event posters, and social media.",
-      description: "Elevate your church's visual identity with 30+ professionally designed templates. Fully editable in Canva or Adobe Photoshop.",
-      features: ["10 sermon slide templates (16:9)", "8 event poster templates (A4 & social)", "6 social media post templates", "4 announcement loop slides", "Canva-compatible links", "Photoshop PSD files (layered)"],
-      fileType: "ZIP (PSD + Canva links PDF)", fileSize: "67 MB", tags: ["Canva","Photoshop","Templates","Graphics"]
+      description: "30+ professionally designed templates. Fully editable in Canva or Photoshop.",
+      features: ["10 sermon slide templates","8 event poster templates","6 social media templates","4 announcement loops","Canva links","Photoshop PSD files"],
+      fileType: "ZIP (PSD + Canva links PDF)", fileSize: "67 MB", tags: ["Canva","Photoshop","Templates"]
     }
   ];
 
   /* ── STATE ── */
   let cart = [], currentUser = null, currentUserData = null, products = [];
 
-  /* ── PAYMENT LOADING ── */
-  const showPaymentLoading = () => document.getElementById('paymentLoadingOverlay').classList.add('visible');
-  const hidePaymentLoading = () => document.getElementById('paymentLoadingOverlay').classList.remove('visible');
+  /* ══════════════════════════════════════════════
+     LOADING OVERLAY — step-by-step progress
+  ══════════════════════════════════════════════ */
+  function showLoadingStep(stepNum, title) {
+    document.getElementById('paymentLoadingOverlay').classList.add('visible');
+    document.getElementById('loadingTitle').textContent = title;
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById('step' + i);
+      el.classList.remove('active','done');
+      if (i < stepNum)  el.classList.add('done');
+      if (i === stepNum) el.classList.add('active');
+    }
+  }
+  function hideLoadingOverlay() {
+    document.getElementById('paymentLoadingOverlay').classList.remove('visible');
+    // Reset steps
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById('step' + i).classList.remove('active','done');
+    }
+    document.getElementById('step1').classList.add('active');
+  }
 
   /* ── TOAST ── */
-  function showToast(msg, type = "info", duration = 3500) {
+  function showToast(msg, type='info', duration=3500) {
     const tc = document.getElementById('toastContainer');
     const t  = document.createElement('div');
     t.className = `toast ${type}`;
@@ -889,21 +857,20 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
     document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
     document.body.style.overflow='';
   }
-  document.querySelectorAll('.modal-backdrop').forEach(bd => bd.addEventListener('click', e => { if(e.target===bd) closeModal(bd.id); }));
+  document.querySelectorAll('.modal-backdrop').forEach(bd =>
+    bd.addEventListener('click', e => { if(e.target===bd) closeModal(bd.id); })
+  );
   document.addEventListener('keydown', e => { if(e.key==='Escape') closeAllModals(); });
 
   /* ── MENU ── */
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const menuOverlay  = document.getElementById('menuOverlay');
   const menuPanel    = document.getElementById('menuPanel');
-
   function openMenu()  { menuOverlay.classList.add('open'); menuPanel.classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMenu() { menuOverlay.classList.remove('open'); menuPanel.classList.remove('open'); document.body.style.overflow=''; }
-
   hamburgerBtn.addEventListener('click', openMenu);
   document.getElementById('menuClose').addEventListener('click', closeMenu);
   menuOverlay.addEventListener('click', e => { if(e.target===menuOverlay) closeMenu(); });
-
   document.getElementById('menuSignIn').addEventListener('click',  () => { closeMenu(); showLoginTab();  openModal('authModal'); });
   document.getElementById('menuSignUp').addEventListener('click',  () => { closeMenu(); showSignupTab(); openModal('authModal'); });
   document.getElementById('menuMyOrders').addEventListener('click',() => { closeMenu(); loadMyOrders(); });
@@ -923,7 +890,7 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
       } else {
         products = STATIC_PRODUCTS;
         STATIC_PRODUCTS.forEach(p => {
-          db.ref('storeProducts/' + p.id).once('value', s => { if (!s.exists()) db.ref('storeProducts/' + p.id).set(p); });
+          db.ref('storeProducts/'+p.id).once('value', s => { if(!s.exists()) db.ref('storeProducts/'+p.id).set(p); });
         });
       }
       renderProducts(products);
@@ -938,7 +905,7 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
   function renderProducts(list) {
     const grid = document.getElementById('productsGrid');
     grid.innerHTML = '';
-    if (!list.length) { grid.innerHTML = '<p style="color:var(--muted);font-size:14px;grid-column:1/-1">No products found.</p>'; return; }
+    if (!list.length) { grid.innerHTML='<p style="color:var(--muted);font-size:14px;grid-column:1/-1">No products found.</p>'; return; }
     list.forEach(p => {
       const inCart = cart.some(c => c.product.id === p.id);
       const isFree = p.price === 0;
@@ -946,8 +913,8 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
       card.className = 'product-card';
       card.innerHTML = `
         <div class="product-thumb" data-pid="${p.id}">
-          ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : (p.emoji||'📦')}
-          ${p.badge ? `<div class="product-badge ${p.badge}">${p.badgeText}</div>` : ''}
+          ${p.image?`<img src="${p.image}" alt="${p.name}" loading="lazy">`:(p.emoji||'📦')}
+          ${p.badge?`<div class="product-badge ${p.badge}">${p.badgeText}</div>`:''}
         </div>
         <div class="product-body" data-pid="${p.id}">
           <div class="product-category">${p.category||''}</div>
@@ -956,27 +923,24 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
           <div class="product-meta">${(p.tags||[]).slice(0,2).map(t=>`<span class="meta-tag">${t}</span>`).join('')}</div>
         </div>
         <div class="product-footer">
-          ${isFree
-            ? `<div class="product-price free-price">FREE</div>`
-            : `<div class="product-price">₹${p.price}<span> /file</span></div>`}
+          ${isFree?`<div class="product-price free-price">FREE</div>`:`<div class="product-price">₹${p.price}<span> /file</span></div>`}
           <button class="add-cart-btn${inCart?' added':''}" data-pid="${p.id}">
-            ${inCart ? '✓ Added' : (isFree ? '+ Get Free' : '+ Add')}
+            ${inCart?'✓ Added':(isFree?'+ Get Free':'+ Add')}
           </button>
         </div>`;
       grid.appendChild(card);
     });
-
     grid.querySelectorAll('.product-thumb[data-pid],.product-body[data-pid]').forEach(el => {
       el.addEventListener('click', e => {
-        if (e.target.closest('.add-cart-btn')) return;
-        const p = products.find(x => x.id === el.getAttribute('data-pid'));
-        if (p) openProductDetail(p);
+        if(e.target.closest('.add-cart-btn')) return;
+        const p = products.find(x => x.id===el.getAttribute('data-pid'));
+        if(p) openProductDetail(p);
       });
     });
     grid.querySelectorAll('.add-cart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const p = products.find(x => x.id === btn.getAttribute('data-pid'));
-        if (p) addToCart(p);
+        const p = products.find(x => x.id===btn.getAttribute('data-pid'));
+        if(p) addToCart(p);
       });
     });
   }
@@ -984,24 +948,24 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
   /* ── FILTER ── */
   document.getElementById('filterBar').addEventListener('click', e => {
     const chip = e.target.closest('.filter-chip');
-    if (!chip) return;
+    if(!chip) return;
     document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
     chip.classList.add('active');
     const f = chip.getAttribute('data-filter');
-    renderProducts(f === 'all' ? products : products.filter(p => p.category === f));
+    renderProducts(f==='all'?products:products.filter(p=>p.category===f));
   });
 
   /* ── PRODUCT DETAIL ── */
   function openProductDetail(p) {
-    const inCart = cart.some(c => c.product.id === p.id);
-    const isFree = p.price === 0;
+    const inCart = cart.some(c => c.product.id===p.id);
+    const isFree = p.price===0;
     document.getElementById('productModalContent').innerHTML = `
       <div class="product-detail-img">${p.image?`<img src="${p.image}" alt="${p.name}">`:(p.emoji||'📦')}</div>
       <div class="product-detail-category">${p.category||''}</div>
       <div class="modal-title" style="padding-right:0">${p.name}</div>
       <div class="product-detail-price">${isFree?`<span style="color:var(--green)">FREE</span>`:`₹${p.price}<span style="font-size:13px;color:var(--muted);font-weight:600"> / digital file</span>`}</div>
       <div class="product-detail-desc">${p.description||p.shortDesc||''}</div>
-      <div style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--text)">What's included:</div>
+      <div style="font-size:13px;font-weight:700;margin-bottom:6px">What's included:</div>
       <ul class="feature-list">${(p.features||[]).map(f=>`<li>${f}</li>`).join('')}</ul>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0">
         ${p.fileSize?`<span class="meta-tag">📦 ${p.fileSize}</span>`:''}
@@ -1017,33 +981,33 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
 
   /* ── CART ── */
   function addToCart(product) {
-    if (cart.some(c => c.product.id === product.id)) { showToast(`${product.name} is already in your cart`,'info'); return; }
-    cart.push({ product, qty: 1 });
+    if(cart.some(c=>c.product.id===product.id)) { showToast(`${product.name} is already in your cart`,'info'); return; }
+    cart.push({ product, qty:1 });
     updateCartUI();
-    showToast(`${product.name} added!`, 'success');
+    showToast(`${product.name} added!`,'success');
     const f = getActiveFilter();
-    renderProducts(f === 'all' ? products : products.filter(p => p.category === f));
+    renderProducts(f==='all'?products:products.filter(p=>p.category===f));
   }
   function removeFromCart(productId) {
-    cart = cart.filter(c => c.product.id !== productId);
+    cart = cart.filter(c=>c.product.id!==productId);
     updateCartUI();
     const f = getActiveFilter();
-    renderProducts(f === 'all' ? products : products.filter(p => p.category === f));
+    renderProducts(f==='all'?products:products.filter(p=>p.category===f));
   }
   function updateCartUI() {
     const count = cart.length;
-    const total = cart.reduce((s,c) => s + c.product.price * c.qty, 0);
+    const total = cart.reduce((s,c)=>s+c.product.price*c.qty,0);
     const countEl = document.getElementById('cartCount');
     countEl.textContent = count;
-    count > 0 ? countEl.classList.add('visible') : countEl.classList.remove('visible');
-    document.getElementById('cartTotal').textContent = total === 0 ? 'FREE' : `₹${total}`;
-    document.getElementById('checkoutBtn').disabled  = count === 0;
+    count>0?countEl.classList.add('visible'):countEl.classList.remove('visible');
+    document.getElementById('cartTotal').textContent = total===0?'FREE':`₹${total}`;
+    document.getElementById('checkoutBtn').disabled = count===0;
     const itemsEl = document.getElementById('cartItems');
-    if (!count) {
-      itemsEl.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><div>Your cart is empty</div><p style="font-size:12px;margin-top:6px">Add some products to get started</p></div>`;
+    if(!count) {
+      itemsEl.innerHTML=`<div class="cart-empty"><div class="cart-empty-icon">🛒</div><div>Your cart is empty</div></div>`;
       return;
     }
-    itemsEl.innerHTML = cart.map(c => `
+    itemsEl.innerHTML = cart.map(c=>`
       <div class="cart-item">
         <div class="cart-item-thumb">${c.product.image?`<img src="${c.product.image}" alt="">`:(c.product.emoji||'📦')}</div>
         <div class="cart-item-info">
@@ -1052,8 +1016,8 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
         </div>
         <button class="cart-item-remove" data-pid="${c.product.id}" title="Remove">✕</button>
       </div>`).join('');
-    itemsEl.querySelectorAll('.cart-item-remove').forEach(btn => {
-      btn.addEventListener('click', () => removeFromCart(btn.getAttribute('data-pid')));
+    itemsEl.querySelectorAll('.cart-item-remove').forEach(btn=>{
+      btn.addEventListener('click',()=>removeFromCart(btn.getAttribute('data-pid')));
     });
   }
 
@@ -1062,131 +1026,196 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
   document.getElementById('cartOverlay').addEventListener('click', closeCart);
   function openCart()  { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); document.body.style.overflow=''; }
-
   document.getElementById('checkoutBtn').addEventListener('click', () => { closeCart(); openCheckout(); });
 
   /* ── CHECKOUT ── */
   function openCheckout() {
-    const total = cart.reduce((s,c) => s + c.product.price * c.qty, 0);
+    const total = cart.reduce((s,c)=>s+c.product.price*c.qty,0);
     document.getElementById('checkoutSummary').innerHTML =
-      cart.map(c => `<div class="checkout-item-row"><span class="name">${c.product.name}</span><span class="price">${c.product.price===0?'FREE':`₹${c.product.price}`}</span></div>`).join('') +
+      cart.map(c=>`<div class="checkout-item-row"><span class="name">${c.product.name}</span><span class="price">${c.product.price===0?'FREE':`₹${c.product.price}`}</span></div>`).join('')+
       `<div class="checkout-total-row"><span>Total</span><span>${total===0?'FREE':`₹${total}`}</span></div>`;
-    if (currentUser) {
-      document.getElementById('guestInfoSection').style.display = 'none';
-      document.getElementById('loggedInSection').style.display  = 'block';
-      document.getElementById('checkoutUserName').textContent   = currentUserData?.name || currentUser.displayName || 'User';
-      document.getElementById('checkoutUserEmail').textContent  = currentUser.email;
+    if(currentUser) {
+      document.getElementById('guestInfoSection').style.display='none';
+      document.getElementById('loggedInSection').style.display='block';
+      document.getElementById('checkoutUserName').textContent=currentUserData?.name||currentUser.displayName||'User';
+      document.getElementById('checkoutUserEmail').textContent=currentUser.email;
     } else {
-      document.getElementById('guestInfoSection').style.display = 'block';
-      document.getElementById('loggedInSection').style.display  = 'none';
+      document.getElementById('guestInfoSection').style.display='block';
+      document.getElementById('loggedInSection').style.display='none';
     }
-    document.getElementById('checkoutMsg').textContent = '';
+    document.getElementById('checkoutMsg').textContent='';
     openModal('checkoutModal');
   }
-  document.getElementById('checkoutModalClose').addEventListener('click', () => closeModal('checkoutModal'));
+  document.getElementById('checkoutModalClose').addEventListener('click',()=>closeModal('checkoutModal'));
 
   /* ── PAY NOW ── */
   document.getElementById('payNowBtn').addEventListener('click', async () => {
     const msgEl = document.getElementById('checkoutMsg');
     let buyerName, buyerEmail, buyerPhone;
 
-    if (currentUser) {
-      buyerName  = currentUserData?.name || currentUser.displayName || 'User';
+    if(currentUser) {
+      buyerName  = currentUserData?.name||currentUser.displayName||'User';
       buyerEmail = currentUser.email;
-      buyerPhone = currentUserData?.phone || '';
+      buyerPhone = currentUserData?.phone||'';
     } else {
       buyerName  = document.getElementById('checkoutName').value.trim();
       buyerEmail = document.getElementById('checkoutEmail').value.trim();
       buyerPhone = document.getElementById('checkoutPhone').value.trim();
-      if (!buyerName || !buyerEmail || !buyerPhone) { msgEl.textContent='Please fill in all required fields.'; msgEl.className='form-msg error'; return; }
-      if (!/^\S+@\S+\.\S+$/.test(buyerEmail)) { msgEl.textContent='Please enter a valid email address.'; msgEl.className='form-msg error'; return; }
+      if(!buyerName||!buyerEmail||!buyerPhone){ msgEl.textContent='Please fill in all required fields.'; msgEl.className='form-msg error'; return; }
+      if(!/^\S+@\S+\.\S+$/.test(buyerEmail)){ msgEl.textContent='Please enter a valid email address.'; msgEl.className='form-msg error'; return; }
     }
 
-    const total = cart.reduce((s,c) => s + c.product.price * c.qty, 0);
+    const total = cart.reduce((s,c)=>s+c.product.price*c.qty,0);
+    const buyer = { name:buyerName, email:buyerEmail, phone:buyerPhone, total };
 
-    /* FREE order — skip Razorpay */
-    if (total === 0) {
+    /* FREE — skip Razorpay */
+    if(total===0) {
       closeModal('checkoutModal');
-      showPaymentLoading();
-      setTimeout(async () => {
-        hidePaymentLoading();
-        await onPaymentSuccess({ razorpay_payment_id: 'FREE-' + Date.now() }, { name: buyerName, email: buyerEmail, phone: buyerPhone, total: 0 });
-      }, 2500);
+      showLoadingStep(1,'Confirming order…');
+      await onPaymentSuccess({ razorpay_payment_id:'FREE-'+Date.now() }, buyer);
       return;
     }
 
-    msgEl.textContent = 'Opening payment gateway…'; msgEl.className = 'form-msg info';
+    msgEl.textContent='Opening payment gateway…'; msgEl.className='form-msg info';
 
     const rzp = new Razorpay({
-      key: RAZORPAY_KEY, amount: total * 100, currency: 'INR',
-      name: 'Ruach Media Store', description: `${cart.length} item(s)`,
-      image: 'https://raw.githubusercontent.com/ruachmedia/registration/refs/heads/main/logo.png.jfif',
-      prefill: { name: buyerName, email: buyerEmail, contact: buyerPhone },
-      theme: { color: '#2f9afe' },
+      key: RAZORPAY_KEY, amount: total*100, currency:'INR',
+      name:'Ruach Media Store', description:`${cart.length} item(s)`,
+      image:'https://raw.githubusercontent.com/ruachmedia/registration/refs/heads/main/logo.png.jfif',
+      prefill:{ name:buyerName, email:buyerEmail, contact:buyerPhone },
+      theme:{ color:'#2f9afe' },
       handler: function(response) {
         closeModal('checkoutModal');
-        showPaymentLoading();
-        setTimeout(async () => {
-          hidePaymentLoading();
-          await onPaymentSuccess(response, { name: buyerName, email: buyerEmail, phone: buyerPhone, total });
-        }, 2500);
+        showLoadingStep(1,'Confirming payment…');
+        onPaymentSuccess(response, buyer);
       },
-      modal: { ondismiss: () => { msgEl.textContent='Payment cancelled.'; msgEl.className='form-msg error'; } }
+      modal:{ ondismiss:()=>{ msgEl.textContent='Payment cancelled.'; msgEl.className='form-msg error'; } }
     });
     rzp.open();
   });
 
-  /* ── PAYMENT SUCCESS ── */
+  /* ══════════════════════════════════════════════
+     PAYMENT SUCCESS — FIXED
+     ✅ cartSnapshot taken FIRST before anything else
+     ✅ downloadUrl fetched fresh from Firebase
+     ✅ email sent AFTER order saved
+     ✅ loading steps update in real time
+  ══════════════════════════════════════════════ */
   async function onPaymentSuccess(razorpayResponse, buyer) {
+
+    /* STEP 1 — Take cart snapshot IMMEDIATELY before anything clears it */
+    const cartSnapshot = cart.map(c => ({ ...c, product: { ...c.product } }));
+
+    /* STEP 2 — Fetch fresh downloadUrl from Firebase for each product */
+    showLoadingStep(2, 'Saving your order…');
+    const enrichedItems = await Promise.all(
+      cartSnapshot.map(async (c) => {
+        try {
+          const snap = await db.ref('storeProducts/'+c.product.id).once('value');
+          const fresh = snap.val();
+          return { ...c, product: { ...c.product, downloadUrl: fresh?.downloadUrl || c.product.downloadUrl || null } };
+        } catch { return c; }
+      })
+    );
+
+    /* STEP 3 — Generate order ID */
     const orderNum = await new Promise(resolve => {
-      db.ref('storeOrderCounter').transaction(cur => (cur||10000)+1, (err, committed, snap) => { if (committed) resolve(snap.val()); });
+      db.ref('storeOrderCounter').transaction(cur=>(cur||10000)+1,(err,committed,snap)=>{ if(committed) resolve(snap.val()); });
     });
-    const orderId = 'RUACH-ORD-' + orderNum;
+    const orderId = 'RUACH-ORD-'+orderNum;
 
-    const orderPayload = {
-      orderId, buyerName: buyer.name, buyerEmail: buyer.email, buyerPhone: buyer.phone,
-      items: cart.map(c => ({ id: c.product.id, name: c.product.name, price: c.product.price, downloadUrl: c.product.downloadUrl || null })),
-      total: buyer.total, paymentId: razorpayResponse.razorpay_payment_id,
-      paymentStatus: 'Paid', orderedAt: new Date().toISOString(), uid: currentUser ? currentUser.uid : null
-    };
+    /* STEP 4 — Save order to Firebase */
+    await db.ref('storeOrders').push({
+      orderId,
+      buyerName:     buyer.name,
+      buyerEmail:    buyer.email,
+      buyerPhone:    buyer.phone,
+      items:         enrichedItems.map(c=>({ id:c.product.id, name:c.product.name, price:c.product.price, downloadUrl:c.product.downloadUrl||null })),
+      total:         buyer.total,
+      paymentId:     razorpayResponse.razorpay_payment_id,
+      paymentStatus: 'Paid',
+      orderedAt:     new Date().toISOString(),
+      uid:           currentUser?currentUser.uid:null
+    });
 
-    await db.ref('storeOrders').push(orderPayload);
-
-    if (!currentUser) {
-      const tempPassword = Math.random().toString(36).slice(-8) + 'A1!';
+    /* STEP 5 — Handle guest account creation */
+    let tempPassword = null;
+    let isNewAccount = false;
+    if(!currentUser) {
+      tempPassword = Math.random().toString(36).slice(-8)+'A1!';
+      isNewAccount = true;
       try {
         const userCred = await auth.createUserWithEmailAndPassword(buyer.email, tempPassword);
-        await db.ref('storeUsers/' + userCred.user.uid).set({ name: buyer.name, email: buyer.email, phone: buyer.phone, createdAt: new Date().toISOString(), createdBy: 'guest-checkout' });
-        await sendPurchaseEmail(buyer, orderId, cart, tempPassword, true);
-      } catch { await sendPurchaseEmail(buyer, orderId, cart, null, false); }
+        await db.ref('storeUsers/'+userCred.user.uid).set({
+          name:buyer.name, email:buyer.email, phone:buyer.phone,
+          createdAt:new Date().toISOString(), createdBy:'guest-checkout'
+        });
+      } catch(authErr) {
+        /* Account already exists — that's fine, still send email */
+        console.warn('Account creation skipped:', authErr.code);
+        isNewAccount = false;
+        tempPassword = null;
+      }
     } else {
-      await db.ref('storeUsers/' + currentUser.uid + '/orders/' + orderId).set(true);
-      await sendPurchaseEmail(buyer, orderId, cart, null, false);
+      await db.ref('storeUsers/'+currentUser.uid+'/orders/'+orderId).set(true);
     }
 
-    const cartSnapshot = [...cart];
-    cart = []; updateCartUI();
-    renderProducts(getActiveFilter()==='all' ? products : products.filter(p => p.category === getActiveFilter()));
+    /* STEP 6 — Send email NOW with enriched items that have downloadUrl */
+    showLoadingStep(3, 'Sending files to your email…');
+    await sendPurchaseEmail(buyer, orderId, enrichedItems, tempPassword, isNewAccount);
+
+    /* STEP 7 — Clear cart and show success */
+    showLoadingStep(4, 'All done!');
+    cart=[];
+    updateCartUI();
+    renderProducts(getActiveFilter()==='all'?products:products.filter(p=>p.category===getActiveFilter()));
+
+    await new Promise(r=>setTimeout(r,800));
+    hideLoadingOverlay();
     showOrderSuccess(orderId, buyer, cartSnapshot);
   }
 
-  /* ── EMAIL ── */
-  async function sendPurchaseEmail(buyer, orderId, cartItems, tempPassword, isNewAccount) {
-    const itemsList  = cartItems.map(c => `• ${c.product.name} — ${c.product.price===0?'FREE':`₹${c.product.price}`}`).join('\n');
-    const fileLinks  = cartItems.map(c => c.product.downloadUrl
-      ? `• ${c.product.name}:\n  ${c.product.downloadUrl}`
-      : `• ${c.product.name}: Download link will be sent within 24 hours`).join('\n\n');
+  /* ══════════════════════════════════════════════
+     SEND EMAIL — FIXED
+     ✅ uses enrichedItems (has downloadUrl)
+     ✅ full error logging
+     ✅ shows exact error in toast if it fails
+  ══════════════════════════════════════════════ */
+  async function sendPurchaseEmail(buyer, orderId, enrichedItems, tempPassword, isNewAccount) {
+
+    const itemsList = enrichedItems
+      .map(c=>`• ${c.product.name} — ${c.product.price===0?'FREE':`₹${c.product.price}`}`)
+      .join('\n');
+
+    const fileLinks = enrichedItems
+      .map(c => c.product.downloadUrl
+        ? `• ${c.product.name}:\n  ${c.product.downloadUrl}`
+        : `• ${c.product.name}: Link will be sent within 24 hrs`)
+      .join('\n\n');
+
+    const params = {
+      to_name:        buyer.name,
+      to_email:       buyer.email,
+      order_id:       orderId,
+      items_list:     itemsList,
+      total:          buyer.total===0?'FREE':`₹${buyer.total}`,
+      file_links:     fileLinks,
+      temp_password:  tempPassword||'N/A',
+      is_new_account: isNewAccount?'Yes — see temporary password above':'No'
+    };
+
+    console.log('📧 Sending email to:', buyer.email);
+    console.log('📦 Params:', params);
+
     try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        to_name: buyer.name, to_email: buyer.email, order_id: orderId,
-        items_list: itemsList, total: buyer.total===0?'FREE':`₹${buyer.total}`,
-        file_links: fileLinks, temp_password: tempPassword||'N/A',
-        is_new_account: isNewAccount ? 'Yes — temporary password included above' : 'No'
-      });
-      showToast('📧 Files sent to your email!', 'success', 5000);
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      showToast('Order saved! Email may be slightly delayed.', 'info');
+      const result = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+      console.log('✅ Email sent:', result.status, result.text);
+      showToast('📧 Files sent to '+buyer.email,'success',6000);
+    } catch(err) {
+      console.error('❌ EmailJS failed:', err);
+      console.error('Status:', err?.status, '| Text:', err?.text);
+      /* Order is still saved in Firebase even if email fails */
+      showToast('Order saved! Email: '+( err?.text||'check console' ),'error',8000);
     }
   }
 
@@ -1196,12 +1225,12 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
     document.getElementById('orderSuccessDetails').innerHTML = `
       <div class="order-detail-row"><span class="label">Name</span><span class="value">${buyer.name}</span></div>
       <div class="order-detail-row"><span class="label">Email</span><span class="value">${buyer.email}</span></div>
-      <div class="order-detail-row"><span class="label">Total Paid</span><span class="value">${buyer.total===0?'FREE':`₹${buyer.total}`}</span></div>
+      <div class="order-detail-row"><span class="label">Total</span><span class="value">${buyer.total===0?'FREE':`₹${buyer.total}`}</span></div>
       <div class="order-detail-row"><span class="label">Items</span><span class="value">${cartSnapshot.length} file(s)</span></div>
       <div class="order-detail-row" style="color:var(--green);border:0;margin-top:4px"><span>📧 Check your inbox — download links sent!</span></div>`;
     openModal('orderSuccessModal');
   }
-  document.getElementById('orderSuccessDoneBtn').addEventListener('click', () => closeModal('orderSuccessModal'));
+  document.getElementById('orderSuccessDoneBtn').addEventListener('click',()=>closeModal('orderSuccessModal'));
 
   /* ── AUTH TABS ── */
   function showLoginTab()  { document.getElementById('loginForm').style.display='block'; document.getElementById('signupForm').style.display='none'; document.getElementById('forgotForm').style.display='none'; document.getElementById('tabLogin').classList.add('active'); document.getElementById('tabSignup').classList.remove('active'); }
@@ -1210,114 +1239,100 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
 
   document.getElementById('tabLogin').addEventListener('click', showLoginTab);
   document.getElementById('tabSignup').addEventListener('click', showSignupTab);
-  document.getElementById('switchToSignup').addEventListener('click',   e => { e.preventDefault(); showSignupTab(); });
-  document.getElementById('switchToLogin').addEventListener('click',    e => { e.preventDefault(); showLoginTab(); });
-  document.getElementById('forgotPasswordLink').addEventListener('click',e => { e.preventDefault(); showForgotTab(); });
-  document.getElementById('backToLogin').addEventListener('click',       e => { e.preventDefault(); showLoginTab(); });
-  document.getElementById('authModalClose').addEventListener('click', () => closeModal('authModal'));
+  document.getElementById('switchToSignup').addEventListener('click', e=>{e.preventDefault();showSignupTab();});
+  document.getElementById('switchToLogin').addEventListener('click',  e=>{e.preventDefault();showLoginTab();});
+  document.getElementById('forgotPasswordLink').addEventListener('click',e=>{e.preventDefault();showForgotTab();});
+  document.getElementById('backToLogin').addEventListener('click',e=>{e.preventDefault();showLoginTab();});
+  document.getElementById('authModalClose').addEventListener('click',()=>closeModal('authModal'));
 
   /* ── SIGN IN ── */
-  document.getElementById('loginSubmitBtn').addEventListener('click', async () => {
-    const email = document.getElementById('loginEmail').value.trim();
-    const pass  = document.getElementById('loginPassword').value;
-    const msgEl = document.getElementById('loginMsg');
-    const btn   = document.getElementById('loginSubmitBtn');
-    if (!email||!pass) { msgEl.textContent='Please enter email and password.'; msgEl.className='form-msg error'; return; }
-    btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Signing in…';
-    msgEl.textContent=''; msgEl.className='form-msg';
-    try {
-      await auth.signInWithEmailAndPassword(email, pass);
-      closeModal('authModal'); showToast('Welcome back! 👋','success');
-    } catch (err) { msgEl.textContent=friendlyAuthError(err.code); msgEl.className='form-msg error'; }
-    finally { btn.disabled=false; btn.textContent='Sign In'; }
+  document.getElementById('loginSubmitBtn').addEventListener('click', async ()=>{
+    const email=document.getElementById('loginEmail').value.trim();
+    const pass=document.getElementById('loginPassword').value;
+    const msgEl=document.getElementById('loginMsg');
+    const btn=document.getElementById('loginSubmitBtn');
+    if(!email||!pass){msgEl.textContent='Please enter email and password.';msgEl.className='form-msg error';return;}
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Signing in…';
+    msgEl.textContent='';msgEl.className='form-msg';
+    try{ await auth.signInWithEmailAndPassword(email,pass); closeModal('authModal'); showToast('Welcome back! 👋','success'); }
+    catch(err){msgEl.textContent=friendlyAuthError(err.code);msgEl.className='form-msg error';}
+    finally{btn.disabled=false;btn.textContent='Sign In';}
   });
 
   /* ── SIGN UP ── */
-  document.getElementById('signupSubmitBtn').addEventListener('click', async () => {
-    const name  = document.getElementById('signupName').value.trim();
-    const email = document.getElementById('signupEmail').value.trim();
-    const phone = document.getElementById('signupPhone').value.trim();
-    const pass  = document.getElementById('signupPassword').value;
-    const msgEl = document.getElementById('signupMsg');
-    const btn   = document.getElementById('signupSubmitBtn');
-    if (!name||!email||!phone||!pass) { msgEl.textContent='Please fill in all fields.'; msgEl.className='form-msg error'; return; }
-    if (pass.length<6) { msgEl.textContent='Password must be at least 6 characters.'; msgEl.className='form-msg error'; return; }
-    btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Creating account…';
-    msgEl.textContent=''; msgEl.className='form-msg';
-    try {
-      const cred = await auth.createUserWithEmailAndPassword(email, pass);
-      await cred.user.updateProfile({ displayName: name });
-      await db.ref('storeUsers/' + cred.user.uid).set({ name, email, phone, createdAt: new Date().toISOString(), createdBy: 'signup' });
+  document.getElementById('signupSubmitBtn').addEventListener('click', async ()=>{
+    const name=document.getElementById('signupName').value.trim();
+    const email=document.getElementById('signupEmail').value.trim();
+    const phone=document.getElementById('signupPhone').value.trim();
+    const pass=document.getElementById('signupPassword').value;
+    const msgEl=document.getElementById('signupMsg');
+    const btn=document.getElementById('signupSubmitBtn');
+    if(!name||!email||!phone||!pass){msgEl.textContent='Please fill in all fields.';msgEl.className='form-msg error';return;}
+    if(pass.length<6){msgEl.textContent='Password must be at least 6 characters.';msgEl.className='form-msg error';return;}
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Creating account…';
+    msgEl.textContent='';msgEl.className='form-msg';
+    try{
+      const cred=await auth.createUserWithEmailAndPassword(email,pass);
+      await cred.user.updateProfile({displayName:name});
+      await db.ref('storeUsers/'+cred.user.uid).set({name,email,phone,createdAt:new Date().toISOString(),createdBy:'signup'});
       closeModal('authModal'); showToast('Account created! Welcome 🎉','success');
-    } catch (err) { msgEl.textContent=friendlyAuthError(err.code); msgEl.className='form-msg error'; }
-    finally { btn.disabled=false; btn.textContent='Create Account'; }
+    }catch(err){msgEl.textContent=friendlyAuthError(err.code);msgEl.className='form-msg error';}
+    finally{btn.disabled=false;btn.textContent='Create Account';}
   });
 
   /* ── FORGOT PASSWORD ── */
-  document.getElementById('forgotSubmitBtn').addEventListener('click', async () => {
-    const email = document.getElementById('forgotEmail').value.trim();
-    const msgEl = document.getElementById('forgotMsg');
-    const btn   = document.getElementById('forgotSubmitBtn');
-    if (!email) { msgEl.textContent='Please enter your email address.'; msgEl.className='form-msg error'; return; }
-    if (!/^\S+@\S+\.\S+$/.test(email)) { msgEl.textContent='Please enter a valid email address.'; msgEl.className='form-msg error'; return; }
-    btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Sending…';
-    msgEl.textContent=''; msgEl.className='form-msg';
-    try {
-      await auth.sendPasswordResetEmail(email);
-      msgEl.textContent='✓ Reset link sent! Check your inbox.'; msgEl.className='form-msg success';
-      document.getElementById('forgotEmail').value='';
-    } catch (err) { msgEl.textContent=friendlyAuthError(err.code); msgEl.className='form-msg error'; }
-    finally { btn.disabled=false; btn.textContent='Send Reset Link'; }
+  document.getElementById('forgotSubmitBtn').addEventListener('click', async ()=>{
+    const email=document.getElementById('forgotEmail').value.trim();
+    const msgEl=document.getElementById('forgotMsg');
+    const btn=document.getElementById('forgotSubmitBtn');
+    if(!email){msgEl.textContent='Please enter your email address.';msgEl.className='form-msg error';return;}
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Sending…';
+    msgEl.textContent='';msgEl.className='form-msg';
+    try{ await auth.sendPasswordResetEmail(email); msgEl.textContent='✓ Reset link sent! Check your inbox.'; msgEl.className='form-msg success'; document.getElementById('forgotEmail').value=''; }
+    catch(err){msgEl.textContent=friendlyAuthError(err.code);msgEl.className='form-msg error';}
+    finally{btn.disabled=false;btn.textContent='Send Reset Link';}
   });
 
   function friendlyAuthError(code) {
-    return ({
-      'auth/user-not-found':       'No account found with this email.',
-      'auth/wrong-password':       'Incorrect password. Please try again.',
-      'auth/email-already-in-use': 'An account with this email already exists.',
-      'auth/weak-password':        'Password must be at least 6 characters.',
-      'auth/invalid-email':        'Please enter a valid email address.',
-      'auth/too-many-requests':    'Too many attempts. Please try again later.',
-      'auth/invalid-credential':   'Invalid email or password. Please try again.'
-    })[code] || 'Something went wrong. Please try again.';
+    return ({'auth/user-not-found':'No account found with this email.','auth/wrong-password':'Incorrect password.','auth/email-already-in-use':'An account with this email already exists.','auth/weak-password':'Password must be at least 6 characters.','auth/invalid-email':'Please enter a valid email address.','auth/too-many-requests':'Too many attempts. Please try again later.','auth/invalid-credential':'Invalid email or password.'})[code]||'Something went wrong. Please try again.';
   }
 
   /* ── AUTH STATE ── */
-  auth.onAuthStateChanged(async user => {
-    currentUser = user;
-    if (user) {
-      const snap = await db.ref('storeUsers/' + user.uid).once('value');
-      currentUserData = snap.val() || { name: user.displayName || user.email };
-      document.getElementById('acctWrap').style.display     = 'flex';
-      document.getElementById('userChipName').textContent   = (currentUserData.name||user.email).split(' ')[0];
-      document.getElementById('userAvatar').textContent     = (currentUserData.name||user.email)[0].toUpperCase();
-      document.getElementById('menuAuthBtns').style.display = 'none';
-      document.getElementById('menuUserInfo').style.display = 'block';
-    } else {
-      currentUserData = null;
-      document.getElementById('acctWrap').style.display     = 'none';
-      document.getElementById('menuAuthBtns').style.display = 'block';
-      document.getElementById('menuUserInfo').style.display = 'none';
+  auth.onAuthStateChanged(async user=>{
+    currentUser=user;
+    if(user){
+      const snap=await db.ref('storeUsers/'+user.uid).once('value');
+      currentUserData=snap.val()||{name:user.displayName||user.email};
+      document.getElementById('acctWrap').style.display='flex';
+      document.getElementById('userChipName').textContent=(currentUserData.name||user.email).split(' ')[0];
+      document.getElementById('userAvatar').textContent=(currentUserData.name||user.email)[0].toUpperCase();
+      document.getElementById('menuAuthBtns').style.display='none';
+      document.getElementById('menuUserInfo').style.display='block';
+    }else{
+      currentUserData=null;
+      document.getElementById('acctWrap').style.display='none';
+      document.getElementById('menuAuthBtns').style.display='block';
+      document.getElementById('menuUserInfo').style.display='none';
     }
   });
 
   /* ── ACCOUNT DROPDOWN ── */
-  document.getElementById('userChipBtn').addEventListener('click', e => { e.stopPropagation(); document.getElementById('acctDropdown').classList.toggle('open'); });
-  document.addEventListener('click', () => document.getElementById('acctDropdown').classList.remove('open'));
-  document.getElementById('logoutBtn').addEventListener('click', async () => { await auth.signOut(); showToast('Signed out','info'); });
-  document.getElementById('myOrdersBtn').addEventListener('click', () => { document.getElementById('acctDropdown').classList.remove('open'); loadMyOrders(); });
+  document.getElementById('userChipBtn').addEventListener('click',e=>{e.stopPropagation();document.getElementById('acctDropdown').classList.toggle('open');});
+  document.addEventListener('click',()=>document.getElementById('acctDropdown').classList.remove('open'));
+  document.getElementById('logoutBtn').addEventListener('click',async()=>{await auth.signOut();showToast('Signed out','info');});
+  document.getElementById('myOrdersBtn').addEventListener('click',()=>{document.getElementById('acctDropdown').classList.remove('open');loadMyOrders();});
 
   /* ── MY ORDERS ── */
   async function loadMyOrders() {
-    document.getElementById('myOrdersList').innerHTML = '<div style="color:var(--muted);font-size:13px;padding:12px 0">Loading…</div>';
+    document.getElementById('myOrdersList').innerHTML='<div style="color:var(--muted);font-size:13px;padding:12px 0">Loading…</div>';
     openModal('myOrdersModal');
-    const snap = await db.ref('storeOrders').orderByChild('buyerEmail').equalTo(currentUser.email).once('value');
-    const list = document.getElementById('myOrdersList');
-    if (!snap.exists()) { list.innerHTML='<div style="color:var(--muted);font-size:14px;text-align:center;padding:24px 0">No orders yet.</div>'; return; }
-    const orders = [];
-    snap.forEach(child => orders.push(child.val()));
-    orders.sort((a,b) => new Date(b.orderedAt)-new Date(a.orderedAt));
-    list.innerHTML = orders.map(o => `
+    const snap=await db.ref('storeOrders').orderByChild('buyerEmail').equalTo(currentUser.email).once('value');
+    const list=document.getElementById('myOrdersList');
+    if(!snap.exists()){list.innerHTML='<div style="color:var(--muted);font-size:14px;text-align:center;padding:24px 0">No orders yet.</div>';return;}
+    const orders=[];
+    snap.forEach(child=>orders.push(child.val()));
+    orders.sort((a,b)=>new Date(b.orderedAt)-new Date(a.orderedAt));
+    list.innerHTML=orders.map(o=>`
       <div class="order-card">
         <div class="order-card-header">
           <span class="order-code">${o.orderId}</span>
@@ -1328,7 +1343,7 @@ const EMAILJS_TEMPLATE_ID = "template_xu318xm";
         <div style="font-size:11px;color:var(--green);margin-top:4px;font-weight:700">✓ ${o.paymentStatus}</div>
       </div>`).join('');
   }
-  document.getElementById('myOrdersModalClose').addEventListener('click', () => closeModal('myOrdersModal'));
+  document.getElementById('myOrdersModalClose').addEventListener('click',()=>closeModal('myOrdersModal'));
 
   /* ── INIT ── */
   loadProducts();
